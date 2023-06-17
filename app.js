@@ -14,16 +14,6 @@ app.use('/api/v1/tasks',tasks)
 app.use(not_found)
 app.use(error)
 
-
-app.get('/', (req,res) => {
-    res.send('Hello this is the Task Manager App')
-})
-
-app.post('/post', (req,res) => {
-    console.log(req.body)
-    res.status(201).json(req.body)
-})
-
 const start = async () => {
     try {
         await connectDB(process.env.dataBase)
