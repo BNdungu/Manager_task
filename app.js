@@ -1,3 +1,4 @@
+
 const express = require('express')
 const app = express()
 const tasks = require('./routes/tasks')
@@ -6,7 +7,7 @@ const not_found = require('./middleware/not_found')
 const error = require('./middleware/errorHandler')
 require('dotenv').config()
 
-port =3000
+port = process.env.PORT || 3000
 
 app.use(express.json())
 app.use(express.static('./public'))
